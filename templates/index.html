@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/bbe29ca877.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+
+</head>
+  <body>
+    <div class="row">
+      <div class="head col-12">
+        <h1 class="heading">IMAGE COLOR PALETTE CREATER</h1>
+      </div>
+      <div class="col-12">
+        <form class="form" action="{{ url_for('save') }}" method="post" enctype="multipart/form-data">
+          <input type="file" id="file" name="file"><br>
+          <input class="submit" type="submit">
+      </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="image_div col-12 col-md-6">
+        <img class="image img-fluid" src="{{ url_for('static', filename='img/image.jpg')}}" alt="img">
+      </div>
+      <div class="colors_div col-12 col-md-6">
+        <div class="first" style="background-color: {{ color_palette[0] }};">#204b73</div>
+        <div class="first" style="background-color: {{ color_palette[1] }};">#b894aa</div>
+        <div class="first" style="background-color: {{ color_palette[2] }};">#3778d0</div>
+        <div class="first" style="background-color: {{ color_palette[3] }};">#170f1d</div>
+        <div class="first" style="background-color: {{ color_palette[4] }};">#7db2df</div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
