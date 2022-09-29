@@ -15,7 +15,7 @@ def home():
         image.save(os.path.join("static/img/", filename))
 
     ct = ColorThief("static/img/image.jpg")
-    palette = ct.get_palette(color_count=4)
+    palette = ct.get_palette(color_count=5)
     color_palette = []
     for color in palette:
         print(color)
